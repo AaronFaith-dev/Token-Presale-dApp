@@ -1,53 +1,76 @@
-# **Node.js Dependency Compatibility Test**
+# TokenPresaleApp
 
-This test checks your ability to fix **broken or outdated dependencies** in a Node.js project. The project you receive will contain version conflicts and missing or incorrect packages. Your job is to make it run.
-
----
-
-## **What You Need to Do**
-
-### **1. Find the Problems**
-
-Look through the project and identify:
-
-* Outdated or incompatible versions
-* Missing or duplicated dependencies
-* Configuration mistakes
+A decentralized application (dApp) for managing a **token presale**.  
+It combines **Solidity smart contracts** with a **Vite-powered frontend** to allow users to securely purchase tokens before the official launch.
 
 ---
 
-### **2. Fix the Dependencies**
+## Tech Stack
 
-Update the dependency file so the project:
-
-* Installs without errors
-* Runs cleanly
-* Uses compatible versions
-
----
-
-### **3. Show That It Works**
-
-After fixing everything:
-
-* Provide a **short script** that proves the project runs
-  (e.g., start a small server, run a simple build, deploy a basic module, or make a minimal Web3/API call)
+- **Smart Contracts:** Solidity (ERC-20, presale logic)
+- **Frontend:** React + Vite
+- **Blockchain Interaction:** ethers.js
+- **Build Tools:** Hardhat or Truffle (for contract deployment)
+- **Wallets Supported:** MetaMask, WalletConnect
 
 ---
 
-## **What to Submit**
+## Getting Started
 
-1. **Your fixed `package.json` file**
-2. **A small codebase** (only the files needed to run your test)
-3. **Your test script** that confirms everything works
+### 1. Clone Repository
+```bash
+git clone https://github.com/trustllabs/Token-Presale-dApp.git
+cd Token-Presale-dApp
+```
+
+### 2. Open the Project in Visual Studio Code
+```bash
+Launch Visual Studio Code and open the project directory to begin development.
+```
+
+### 3. Install Dependencies
+```bash
+npm install
+```
+
+### 4. Setup Environment Variables
+Copy `.env.default` → `.env` and configure:
+
+```env
+VITE_ALCHEMY_API_KEY=your-key
+VITE_CONTRACT_ADDRESS=0xYourDeployedPresaleAddress
+VITE_TOKEN_ADDRESS=0xYourTokenAddress
+VITE_NETWORK=sepolia
+```
+
+### 5. Run Development Server
+```bash
+npm run start
+```
+Frontend runs at `http://localhost:5173/`
+
+### 6. Build for Production
+```bash
+npm run build
+```
 
 ---
 
-## **Goal**
+## Future Roadmap: Staking Platform
 
-Show that you can quickly:
+Our goal is to **evolve TokenStaking into a full rewards platform** after the presale.  
 
-* Spot dependency issues
-* Fix version conflicts
-* Make a broken Node.js project work again
+Planned features:
+- **Staking Contract**
+  - Users can stake tokens for rewards.
+  - Multiple staking pools (different lock periods, APYs).
+- **Reward Distribution**
+  - Stakers earn additional or partner tokens.
+- **Frontend Dashboard**
+  - Display staked balance, rewards, and APR.
+  - Claim/unstake functions.
+- **Security**
+  - Slashing protection.
+  - Audit-ready architecture.
 
+This will allow us to transition from **token distribution** → **long-term ecosystem utility**.
